@@ -14,7 +14,11 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'org.springframework:spring-web'
+	implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
