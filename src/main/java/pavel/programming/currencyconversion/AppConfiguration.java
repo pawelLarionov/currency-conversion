@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @ComponentScan(basePackages = {"pavel.programming.currencyconversion"})
-public class WebConfiguration {
+public class AppConfiguration {
 
     @Value("${neoFinancial.api.httClient.connectTimeout:5000}")
     private int neoFinancialHttClientConnectTimeout;
