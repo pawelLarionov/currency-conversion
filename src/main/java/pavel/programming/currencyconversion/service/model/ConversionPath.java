@@ -5,6 +5,7 @@ import pavel.programming.currencyconversion.remotecall.model.Conversion;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information about Path conversion of currency
@@ -41,6 +42,19 @@ public class ConversionPath {
 
     public BigDecimal getAmount() {
         return amount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ConversionPath that = (ConversionPath) o;
+        return Objects.equals(path, that.path) && amount != null && amount.compareTo(that.amount) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(path, amount);
     }
 
     @Override
