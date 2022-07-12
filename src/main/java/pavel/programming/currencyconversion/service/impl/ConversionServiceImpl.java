@@ -41,9 +41,12 @@ public class ConversionServiceImpl implements ConversionService {
     }
 
     private void getPath(Map<String, List<Conversion>> conversionGraphMap, Map<Currency, ConversionPath> resultMap, ConversionPath prevPath, Conversion conversion) {
+        if (prevPath.willBeLoopIfAdd(conversion)) {
+            return; // loop detected
+        }
+
         ConversionPath conversionPath = new ConversionPath(prevPath.getAmount(), prevPath.getPath())
                 .addConversionAndMultiplyAmount(conversion);
-
 
         Currency currencyTo = conversion.getCurrencyTo();
         replaceInMapIfBetterConversion(resultMap, currencyTo, conversionPath);

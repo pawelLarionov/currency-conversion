@@ -1,11 +1,17 @@
 package pavel.programming.currencyconversion.service.model;
 
 import pavel.programming.currencyconversion.remotecall.model.Conversion;
+import pavel.programming.currencyconversion.remotecall.model.Currency;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Information about Path conversion of currency
@@ -15,6 +21,7 @@ public class ConversionPath {
      * Path conversion of currency
      */
     private final List<Conversion> path = new ArrayList<>();
+    private final Set<Currency> currencyFromInPath = new HashSet<>();
 
     /**
      * Final amount after conversion by this path
@@ -28,10 +35,14 @@ public class ConversionPath {
     public ConversionPath(BigDecimal amount, List<Conversion> path) {
         this.amount = amount;
         this.path.addAll(path);
+        for (Conversion conversion : path) {
+            currencyFromInPath.add(conversion.getCurrencyFrom());
+        }
     }
 
     public ConversionPath addConversionAndMultiplyAmount(Conversion conversion) {
         this.path.add(conversion);
+        currencyFromInPath.add(conversion.getCurrencyFrom());
         this.amount = this.amount.multiply(conversion.getExchangeRate());
         return this;
     }
@@ -42,6 +53,10 @@ public class ConversionPath {
 
     public BigDecimal getAmount() {
         return amount;
+    }
+
+    public boolean willBeLoopIfAdd(Conversion conversion) {
+        return currencyFromInPath.contains(conversion.getCurrencyTo());
     }
 
     @Override

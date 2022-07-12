@@ -32,5 +32,6 @@ public class AppServiceImp implements AppService {
         LOGGER.debug("API return conversionList: {}",  currencyConversionList);
 
         Map<Currency, ConversionPath> bestCurrencyConversion = conversionService.getBestCurrencyConversion(currencyConversionList, "CAD", new BigDecimal("100.00"));
+        LOGGER.debug("bestCurrencyConversion: {}",  bestCurrencyConversion);
     }
 }
