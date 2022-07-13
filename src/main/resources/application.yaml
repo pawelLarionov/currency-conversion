@@ -3,3 +3,10 @@ neoFinancial:
     url: https://api-coding-challenge.neofinancial.com/currency-conversion?seed=65015
     httClient:
       connectTimeout:5000
+
+
+outputCsvFile:
+  name: ./output.csv
+
+startCurrencyCode: CAD
+startAmount: 100.00
