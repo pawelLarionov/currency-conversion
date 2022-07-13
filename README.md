@@ -54,7 +54,7 @@ As a result of execution will be created CSV file ./output.csv that contains opt
 
 ### API Endpoint URL  
 
-`https://api-coding-challenge.neofinancial.com/currency-conversion?seed=65015`
+`https://api-coding-challenge.neofinancial.com/currency-conversion?seed=77078`
 
 ### Requirements
 

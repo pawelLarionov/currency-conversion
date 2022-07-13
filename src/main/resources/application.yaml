@@ -1,6 +1,6 @@
 neoFinancial:
   api:
-    url: https://api-coding-challenge.neofinancial.com/currency-conversion?seed=65015
+    url: https://api-coding-challenge.neofinancial.com/currency-conversion?seed=77078
     httClient:
       connectTimeout:5000
 
