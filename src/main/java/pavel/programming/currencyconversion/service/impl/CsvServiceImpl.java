@@ -11,6 +11,7 @@ import pavel.programming.currencyconversion.service.CsvService;
 import pavel.programming.currencyconversion.service.model.ConversionPath;
 
 import java.io.BufferedWriter;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -42,7 +43,7 @@ public class CsvServiceImpl implements CsvService {
                 csvPrinter.printRecord(
                         currency.getCode(),
                         currency.getName(),
-                        conversionPath.getAmount(),
+                        conversionPath.getAmount().setScale(15, RoundingMode.FLOOR),
                         conversionPath.getPath().stream().map(
                                 c -> c.getCurrencyFrom().getCode()).collect(Collectors.joining(" | ")
                         )
