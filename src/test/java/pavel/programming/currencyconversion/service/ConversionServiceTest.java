@@ -22,6 +22,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Tests for ConversionService methods
+ */
 @ExtendWith(SpringExtension.class)
 @Import(TestConfiguration.class)
 public class ConversionServiceTest {

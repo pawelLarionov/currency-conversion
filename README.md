@@ -1,11 +1,44 @@
 # currency-conversion
 
-## Problem
+    Find the best currency conversion.
+
+## Requirements
+
+1. Java - 11
+
+2. gradle - 7.4
+
+## Steps to Setup
+
+**1. Clone the application**
+
+```bash
+git clone https://github.com/pawelLarionov/currency-conversion.git
+```
+
+**2. Build and run the app using gradle**
+
+```bash
+cd currency-conversion
+./gradlew bootRun
+
+Also after './gradlew build' you can run:  'java -jar ./build/libs/currency-conversion-0.0.1-SNAPSHOT.jar' ) 
+
+As a result of execution will be created CSV file ./output.csv that contains optimal conversions.
+```
+
+### Configuration and log files
+    Result CSV file   : ./output.csv
+    Log file          : ./logs/application.log
+    Configuration file: ./src/main/resources/application.yaml
+
+## Information about task
+
     Find the best currency conversion possible for our customers. 
     However, we don’t have direct Canadian Dollar conversions to all currencies so we have to trade currencies for other currencies.
     It is possible that we can go from one currency to another, and that a currency could show up multiple times.
 
-## Example
+### Example
 
     Convert CAD to EUR
     CAD -> GBP -> EUR
@@ -19,11 +52,11 @@
     CAD -> HKD = 90.00
     CAD -> GBP -> DOGE -> HKD = 95.000
 
-## API Endpoint URL  
+### API Endpoint URL  
 
 `https://api-coding-challenge.neofinancial.com/currency-conversion?seed=65015`
 
-## Requirements
+### Requirements
 
     Use one of the following languages: Javascript, Typescript, Java, C#, Python or Ruby
     Ensure you comment your code

@@ -22,7 +22,6 @@ public class CsvServiceImpl implements CsvService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CsvServiceImpl.class);
 
     private static final CSVFormat CSV_FORMAT= CSVFormat.DEFAULT.builder()
-            .setDelimiter(';')
             .setHeader("Currency Code","Country","Amount of currency","Path for the best conversion rate")
             .build();
 

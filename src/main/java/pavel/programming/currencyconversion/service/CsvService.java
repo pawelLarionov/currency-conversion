@@ -6,10 +6,13 @@ import pavel.programming.currencyconversion.service.model.ConversionPath;
 import java.nio.file.Path;
 import java.util.Map;
 
+/**
+ * Service for working with csv files
+ */
 public interface CsvService {
 
     /**
-     * Generate a CSV file as an output that contains optimal conversions paths.
+     * Generate and save a CSV file that contains optimal conversions paths.
      * The file have the following format:
      * Currency Code (ie. AUD, USD, BTC)
      * Country (ie. Australia, USA, Bitcoin)
